@@ -16,7 +16,11 @@ config :heini, Heini.Repo,
 # you can enable the server option below.
 config :heini, HeiniWeb.Endpoint,
   http: [port: 4002],
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Enable SQL Sandbox for wallaby and enable the chrome driver
+config :heini, :sql_sandbox, true
+config :wallaby, driver: Wallaby.Chrome

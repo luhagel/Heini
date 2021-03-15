@@ -20,7 +20,7 @@ defmodule Heini.MixProject do
   def application do
     [
       mod: {Heini.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :mime, :telemetry, :hackney]
     ]
   end
 
@@ -48,7 +48,8 @@ defmodule Heini.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:wallaby, "~> 0.28.0", [runtime: false, only: :test]}
     ]
   end
 
