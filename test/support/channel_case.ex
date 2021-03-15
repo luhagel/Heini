@@ -17,6 +17,8 @@ defmodule HeiniWeb.ChannelCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       # Import conveniences for testing with channels
@@ -29,10 +31,10 @@ defmodule HeiniWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Heini.Repo)
+    :ok = Sandbox.checkout(Heini.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Heini.Repo, {:shared, self()})
+      Sandbox.mode(Heini.Repo, {:shared, self()})
     end
 
     :ok

@@ -16,6 +16,8 @@ defmodule Heini.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       alias Heini.Repo
@@ -28,10 +30,10 @@ defmodule Heini.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Heini.Repo)
+    :ok = Sandbox.checkout(Heini.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Heini.Repo, {:shared, self()})
+      Sandbox.mode(Heini.Repo, {:shared, self()})
     end
 
     :ok
