@@ -1,4 +1,7 @@
 defmodule HeiniWeb.FeatureCase do
+  @moduledoc """
+  Sets up a basic test case for integration/feature tests with wallaby
+  """
   use ExUnit.CaseTemplate
 
   using do

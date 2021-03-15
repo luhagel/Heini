@@ -1,4 +1,7 @@
 defmodule HeiniWeb.PageLive do
+  @moduledoc """
+  Homepage LiveView
+  """
   use HeiniWeb, :live_view
 
   @impl true
