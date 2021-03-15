@@ -21,7 +21,7 @@ defmodule Heini.MixProject do
   def application do
     [
       mod: {Heini.Application, []},
-      extra_applications: [:logger, :runtime_tools, :mime, :telemetry, :hackney]
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
