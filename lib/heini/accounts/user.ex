@@ -1,4 +1,7 @@
 defmodule Heini.Accounts.User do
+  @moduledoc """
+  Schema and changesets for the basic User accounts
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

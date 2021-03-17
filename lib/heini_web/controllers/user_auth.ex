@@ -1,4 +1,7 @@
 defmodule HeiniWeb.UserAuth do
+  @moduledoc """
+  Provides the surface area functions around user authentication
+  """
   import Plug.Conn
   import Phoenix.Controller
 

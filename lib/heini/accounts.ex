@@ -4,8 +4,8 @@ defmodule Heini.Accounts do
   """
 
   import Ecto.Query, warn: false
+  alias Heini.Accounts.{User, UserNotifier, UserToken}
   alias Heini.Repo
-  alias Heini.Accounts.{User, UserToken, UserNotifier}
 
   ## Database getters
 

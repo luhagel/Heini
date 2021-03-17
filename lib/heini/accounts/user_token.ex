@@ -1,4 +1,7 @@
 defmodule Heini.Accounts.UserToken do
+  @moduledoc """
+  Schema and changesets for usertokens,which store the user session states
+  """
   use Ecto.Schema
   import Ecto.Query
 

@@ -1,4 +1,7 @@
 defmodule Heini.Accounts.UserNotifier do
+  @moduledoc """
+  Provides functionality around communication with users
+  """
   # For simplicity, this module simply logs messages to the terminal.
   # You should replace it by a proper email or notification tool, such as:
   #
