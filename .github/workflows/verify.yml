@@ -107,7 +107,9 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install deps
-        run: (cd assets && yarn)
+        run: |
+          mix deps.get
+          (cd assets && yarn)
       - name: Publish Image to Container Registry
         uses: ripplr-io/docr-docker-publish@v1
         with:
