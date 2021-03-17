@@ -23,11 +23,16 @@
 }
 
 .btn {
-  @apply py-2 px-4 font-semibold rounded-lg shadow-md text-white hover:bg-green-500 hover:shadow transition-all ease-in-out;
-  background-color: #0AB9BF;
+  @apply py-2 px-4 font-semibold rounded-sm shadow-md text-white bg-[#0AB9BF] hover:bg-green-500 hover:shadow transition-all ease-in-out;
 }
 
 @tailwind utilities;
+
+.invalid-feedback {
+  color: #a94442;
+  display: block;
+  margin: -1rem 0 2rem;
+}
 
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
@@ -68,9 +73,4 @@
 }
 .alert:empty {
   display: none;
-}
-.invalid-feedback {
-  color: #a94442;
-  display: block;
-  margin: -1rem 0 2rem;
 }
