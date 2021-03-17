@@ -28,7 +28,7 @@ RUN mix phx.digest
 RUN mix release
 
 # ---- Application Stage ----
-FROM debian:stretch AS app
+FROM debian:buster AS app
 
 ENV LANG=C.UTF-8
 
