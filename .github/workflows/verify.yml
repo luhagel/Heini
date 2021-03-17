@@ -69,3 +69,21 @@ jobs:
       - run: mix format --check-formatted
       - run: mix test
       - run: mix credo
+
+  deploy:
+    needs: [
+      verify
+    ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        otp: [23]
+        elixir: [1.11]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Image to Container Registry
+        uses: ripplr-io/docr-docker-publish@v1
+        with:
+          image_path: heini/heini
+          sha_size: '8'
+
