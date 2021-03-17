@@ -90,4 +90,6 @@ jobs:
         with:
           image_path: heini/heini
           sha_size: '8'
+      - name: Trigger Deployment
+        run: doctl apps create-deployment 7eeb080a-66a2-4e85-a876-b062a93e8551
 
