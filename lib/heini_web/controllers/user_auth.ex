@@ -27,7 +27,7 @@ defmodule HeiniWeb.UserAuth do
   disconnected on log out. The line can be safely removed
   if you are not using LiveView.
   """
-  def log_in_user(conn, user, params \\ %{}) do
+  def sign_in_user(conn, user, params \\ %{}) do
     token = Accounts.generate_user_session_token(user)
     user_return_to = get_session(conn, :user_return_to)
 
@@ -49,7 +49,7 @@ defmodule HeiniWeb.UserAuth do
 
   # This function renews the session ID and erases the whole
   # session to avoid fixation attacks. If there is any data
-  # in the session you may want to preserve after log in/log out,
+  # in the session you may want to preserve after sign in/log out,
   # you must explicitly fetch the session data before clearing
   # and then immediately set it after clearing, for example:
   #
@@ -135,7 +135,7 @@ defmodule HeiniWeb.UserAuth do
       conn
     else
       conn
-      |> put_flash(:error, "You must log in to access this page.")
+      |> put_flash(:error, "You must sign in to access this page.")
       |> maybe_store_return_to()
       |> redirect(to: Routes.user_session_path(conn, :new))
       |> halt()

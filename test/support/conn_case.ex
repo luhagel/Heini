@@ -46,14 +46,14 @@ defmodule HeiniWeb.ConnCase do
   @doc """
   Setup helper that registers and logs in users.
 
-      setup :register_and_log_in_user
+      setup :register_and_sign_in_user
 
   It stores an updated connection and a registered user in the
   test context.
   """
-  def register_and_log_in_user(%{conn: conn}) do
+  def register_and_sign_in_user(%{conn: conn}) do
     user = Heini.AccountsFixtures.user_fixture()
-    %{conn: log_in_user(conn, user), user: user}
+    %{conn: sign_in_user(conn, user), user: user}
   end
 
   @doc """
@@ -61,7 +61,7 @@ defmodule HeiniWeb.ConnCase do
 
   It returns an updated `conn`.
   """
-  def log_in_user(conn, user) do
+  def sign_in_user(conn, user) do
     token = Heini.Accounts.generate_user_session_token(user)
 
     conn

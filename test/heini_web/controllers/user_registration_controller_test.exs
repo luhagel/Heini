@@ -8,12 +8,14 @@ defmodule HeiniWeb.UserRegistrationControllerTest do
       conn = get(conn, Routes.user_registration_path(conn, :new))
       response = html_response(conn, 200)
       assert response =~ "<h1>Register</h1>"
-      assert response =~ "Log in</a>"
+      assert response =~ "Sign in</a>"
       assert response =~ "Register</a>"
     end
 
     test "redirects if already logged in", %{conn: conn} do
-      conn = conn |> log_in_user(user_fixture()) |> get(Routes.user_registration_path(conn, :new))
+      conn =
+        conn |> sign_in_user(user_fixture()) |> get(Routes.user_registration_path(conn, :new))
+
       assert redirected_to(conn) == "/"
     end
   end

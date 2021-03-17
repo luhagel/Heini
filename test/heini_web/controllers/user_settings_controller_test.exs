@@ -4,7 +4,7 @@ defmodule HeiniWeb.UserSettingsControllerTest do
   alias Heini.Accounts
   import Heini.AccountsFixtures
 
-  setup :register_and_log_in_user
+  setup :register_and_sign_in_user
 
   describe "GET /users/settings" do
     test "renders settings page", %{conn: conn} do
